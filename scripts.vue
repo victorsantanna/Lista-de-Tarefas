@@ -25,7 +25,13 @@ const todosApp ={
                 alert('Por gentileza digite uma tarefa!')
             }
         }
-    }
+    },
+    created() {
+        this.todos = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : this.todos;
+    },
+    updated(){
+        localStorage.setItem("todos", JSON.stringify(this.todos));
+    },
 
 };
 
