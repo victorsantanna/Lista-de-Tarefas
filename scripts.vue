@@ -1,13 +1,6 @@
 
 var todos = [
-    {
-        text: 'Aprender HTML, CSS e Javascript',
-        done: true
-    },
-    {
-        text: 'basic vue.js',
-        done: false
-    }
+ 
 ];
 
 const todosApp ={
@@ -26,8 +19,10 @@ const todosApp ={
                 this.newTodo = {
                     done: false
                 };
+                localStorage.setItem("todos", JSON.stringify(this.todos));
+
             } else{
-                alert('o texto é obrigatório')
+                alert('Por gentileza digite uma tarefa!')
             }
         }
     }
